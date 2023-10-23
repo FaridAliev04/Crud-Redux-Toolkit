@@ -10,9 +10,16 @@ export const crud =createSlice({
             console.log(action)
             console.log(action.payload.name)
             return [...state,{id:action.payload.id,name:action.payload.name,surname:action.payload.surname}]
+        },
+        handleDelete:(state,action)=>{
+            const {id}=action.payload
+            console.log(id)
+           return state.filter((e)=>{
+                return e.id!=id
+            })
         }
     }
 })
 
-export const {add}=crud.actions
+export const {add,handleDelete}=crud.actions
 export default crud.reducer
