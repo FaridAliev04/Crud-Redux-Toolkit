@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { add } from '../toolkits/crud'
 import uuid4 from 'uuid4'
+import Main from './Main'
 
 const Header = () => {
     const [name,setName]=useState()
     const [surname,setSurname]=useState()
-    const user=useSelector((e)=>e.name)
+    // const user=useSelector((e)=>e.name)
+    const [data,setData]=useState(useSelector((e)=>e.name))
     const dispatch=useDispatch()
-    console.log(user)
 
     const handleSubmit=()=>{
         dispatch(add({name:name,id:uuid4(),surname:surname}))
@@ -17,7 +18,8 @@ const Header = () => {
     }
   return (
     <div className='header'>
-        <div className="inp_div">
+        <div className="form_div">
+              <div className="inp_div">
             <label >Name</label>
             <input onChange={(e)=>setName(e.target.value)} type="text" />
         </div>
@@ -26,6 +28,10 @@ const Header = () => {
             <input onChange={(e)=>setSurname(e.target.value)} type="text" />
         </div>
         <button onClick={()=>handleSubmit()}>Add</button>
+        </div>
+
+        <Main data={data} setData={setData}/>
+      
      
     </div>
   )
