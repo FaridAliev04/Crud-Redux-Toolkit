@@ -28,7 +28,7 @@ const uptataFunc=(e)=>{
   return (
     <div>
         {user.map((e)=>{
-            return  test===e.id?<Params  test={test} setTest={setTest}/>: <div className='div_map'>
+            return  test===e.id?<Params  test={test} setTest={setTest}/>: <div key={e.id} className='div_map'>
                 <h1>{ e.name }</h1>
                 <button onClick={()=>deleteItem(e)} className='map_btn-delete map_btn'>X</button>
                 <button onClick={()=>uptataFunc(e)} className='map_btn-uptate map_btn'>Uptate</button>
