@@ -8,8 +8,8 @@ export const crud =createSlice({
     reducers:{
         add:(state,action)=>{
             console.log(action)
-            console.log(action.payload.name)
-            return [...state,{id:action.payload.id,name:action.payload.name,surname:action.payload.surname}]
+            console.log(action.payload.header)
+            return [...state,{id:action.payload.id,header:action.payload.header,title:action.payload.title}]
         },
         handleDelete:(state,action)=>{
             const {id}=action.payload
@@ -20,10 +20,11 @@ export const crud =createSlice({
         },
         uptate:(state,action)=>{
             
-            const {test,upName}=action.payload
+            const {test,upHeader,upTitle}=action.payload
             const data=state.find(e=>e.id===test)
             if(data){
-                data.name=upName
+                data.header=upHeader
+                data.title=upTitle
             }
             
 

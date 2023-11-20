@@ -4,3 +4,13 @@
 .error_span{
   visibility: visible;
 }
+input{
+  outline: none;
+  padding: 5px 10px;
+}
+label{
+  font-size: 1.2rem;
+}
+.inp_div{
+
+}

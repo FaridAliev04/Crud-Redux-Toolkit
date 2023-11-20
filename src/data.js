@@ -1,15 +1,15 @@
 export const data=[{
     id:1,
-    name:"Ferid",
-    surname:"Eliyev"
+    header:"Ferid",
+    title:"Eliyev"
 },
 {
     id:2,
-    name:"Yuqaslaviya",
-    surname:"Balken"
+    header:"Yuqaslaviya",
+    title:"Balken"
 },
 {
     id:3,
-    name:"Makidoniya",
-    surname:"Kecmis Yuqaslaviya"
+    header:"Makidoniya",
+    title:"Kecmis Yuqaslaviya"
 }]
